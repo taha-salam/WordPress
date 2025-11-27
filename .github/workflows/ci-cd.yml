@@ -1,0 +1,16 @@
+name: WordPress CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  source-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Verify Source Stage
+        run: echo "Source stage triggered successfully on commit or PR!"
